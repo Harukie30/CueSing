@@ -4,3 +4,5 @@ ignoredBuiltDependencies:
 packages:
   - "packages/*"
   - "apps/*"
+packages:
+  - "."
