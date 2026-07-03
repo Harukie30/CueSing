@@ -1,0 +1,58 @@
+[
+  {
+    "id": "queen-bohemian-rhapsody",
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "youtubeId": "9Lxm0iSnKNc",
+    "tags": ["rock", "classic", "english"]
+  },
+  {
+    "id": "adele-someone-like-you",
+    "title": "Someone Like You",
+    "artist": "Adele",
+    "youtubeId": "vdy1tfAAzYU",
+    "tags": ["pop", "ballad", "english"]
+  },
+  {
+    "id": "taylor-swift-shake-it-off",
+    "title": "Shake It Off",
+    "artist": "Taylor Swift",
+    "youtubeId": "qN4ooNx77u0",
+    "tags": ["pop", "english"]
+  },
+  {
+    "id": "journey-dont-stop-believin",
+    "title": "Don't Stop Believin'",
+    "artist": "Journey",
+    "youtubeId": "VX6iDUqOC6o",
+    "tags": ["rock", "classic", "english"]
+  },
+  {
+    "id": "abba-dancing-queen",
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "youtubeId": "xFrGuyw1V8s",
+    "tags": ["pop", "classic", "english"]
+  },
+  {
+    "id": "bruno-mars-just-the-way-you-are",
+    "title": "Just the Way You Are",
+    "artist": "Bruno Mars",
+    "youtubeId": "pLTT-SGVGEk",
+    "tags": ["pop", "english"]
+  },
+  {
+    "id": "whitney-houston-i-wanna-dance",
+    "title": "I Wanna Dance with Somebody",
+    "artist": "Whitney Houston",
+    "youtubeId": "YEHqNDiM6Bc",
+    "tags": ["pop", "classic", "english"]
+  },
+  {
+    "id": "ed-sheeran-perfect",
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "youtubeId": "2Vv-BfVoq4g",
+    "tags": ["pop", "ballad", "english"]
+  }
+]
