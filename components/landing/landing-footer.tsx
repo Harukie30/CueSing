@@ -1,5 +1,5 @@
+import Image from "next/image"
 import Link from "next/link"
-import { Heart, Smartphone, Wifi } from "lucide-react"
 
 import { AppBrand } from "@/components/app-brand"
 import { DarkModeToggle } from "@/components/dark-mode-toggle"
@@ -7,9 +7,21 @@ import { Badge } from "@/components/ui/badge"
 import { APP_DEVELOPER, APP_NAME } from "@/lib/brand"
 
 const highlights = [
-  { icon: Wifi, label: "Same Wi-Fi" },
-  { icon: Smartphone, label: "No account needed" },
-  { icon: Heart, label: "Built for family nights" },
+  {
+    icon: "/connection.png",
+    label: "Same Wi-Fi",
+    description: "Connect from any device at home",
+  },
+  {
+    icon: "/forbidden.png",
+    label: "No account needed",
+    description: "Open, request, and sing right away",
+  },
+  {
+    icon: "/family.png",
+    label: "Family nights",
+    description: "Made for shared karaoke moments",
+  },
 ] as const
 
 export function LandingFooter() {
@@ -18,11 +30,28 @@ export function LandingFooter() {
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-8 px-4 py-10 sm:px-6 sm:py-12">
         <AppBrand showSlogan size="lg" />
 
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          {highlights.map(({ icon: Icon, label }) => (
-            <Badge key={label} variant="secondary" className="gap-1.5 px-3 py-1">
-              <Icon />
-              {label}
+        <div className="grid w-full max-w-3xl gap-3 sm:grid-cols-3">
+          {highlights.map(({ icon, label, description }) => (
+            <Badge
+              key={label}
+              variant="secondary"
+              className="h-auto w-full justify-start gap-3 whitespace-normal rounded-2xl border border-border/60 bg-background/70 px-3 py-3 text-left shadow-sm backdrop-blur transition-[transform,background-color,border-color,box-shadow] hover:-translate-y-0.5  hover:bg-background hover:shadow-md"
+            >
+              <Image
+                src={icon}
+                alt=""
+                width={40}
+                height={40}
+                className="size-10 shrink-0 object-contain drop-shadow-sm"
+              />
+              <span className="flex min-w-0 flex-col gap-0.5">
+                <span className="text-sm font-semibold leading-tight text-foreground">
+                  {label}
+                </span>
+                <span className="text-[11px] leading-snug text-muted-foreground">
+                  {description}
+                </span>
+              </span>
             </Badge>
           ))}
         </div>

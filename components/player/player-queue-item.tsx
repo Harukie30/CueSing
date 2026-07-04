@@ -28,7 +28,7 @@ export function PlayerQueueItem({
   return (
     <article
       className={cn(
-        "flex gap-3 rounded-xl border p-3 transition-colors",
+        "flex gap-3 rounded-xl border p-3 transition-colors landscape-short:gap-2 landscape-short:p-2",
         isNowPlaying
           ? "border-primary/25 bg-primary/10"
           : isNext
@@ -37,7 +37,7 @@ export function PlayerQueueItem({
       )}
     >
       <div className="relative shrink-0">
-        <div className="relative size-14 overflow-hidden rounded-lg bg-muted sm:size-16">
+        <div className="relative size-14 overflow-hidden rounded-lg bg-muted sm:size-16 landscape-short:size-12">
           <Image
             src={youtubeThumbnail(item.youtubeId)}
             alt=""
@@ -61,13 +61,13 @@ export function PlayerQueueItem({
 
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         <div className="min-w-0 space-y-0.5">
-          <p className="line-clamp-2 text-sm leading-snug font-medium sm:text-[0.95rem]">
+          <p className="line-clamp-2 text-sm leading-snug font-medium sm:text-[0.95rem] landscape-short:text-xs">
             {item.title}
           </p>
           <p className="truncate text-xs text-muted-foreground">{item.artist}</p>
         </div>
 
-        <QueueRequester name={item.requestedBy} />
+        <QueueRequester name={item.requestedBy} className="landscape-short:hidden" />
 
         <div className="flex flex-wrap items-center gap-1.5">
           {isNowPlaying ? (

@@ -107,7 +107,7 @@ export function YouTubePlayer({ videoId, onEnded }: YouTubePlayerProps) {
   }, [videoId])
 
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-2xl bg-black landscape-short:max-h-[50dvh] landscape-short:w-full">
+    <div className="aspect-video w-full overflow-hidden rounded-2xl bg-black landscape-short:h-full landscape-short:max-h-[calc(100dvh-5rem)] landscape-short:min-h-40 landscape-short:w-full">
       <div ref={containerRef} className="size-full [&_iframe]:size-full" />
     </div>
   )

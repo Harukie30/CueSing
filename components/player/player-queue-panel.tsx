@@ -16,7 +16,7 @@ export function PlayerQueuePanel({ queue }: PlayerQueuePanelProps) {
   const upNextCount = queue.upNext.length
 
   return (
-    <aside className="flex min-h-[320px] flex-col overflow-hidden rounded-2xl bg-card/55 backdrop-blur-sm lg:min-h-0 lg:max-h-[calc(100vh-12rem)] landscape-short:min-h-0 landscape-short:max-h-[calc(100dvh-4.5rem)]">
+    <aside className="flex min-h-[320px] flex-col overflow-hidden rounded-2xl bg-card/55 backdrop-blur-sm lg:min-h-0 lg:max-h-[calc(100vh-12rem)] landscape-short:h-full landscape-short:min-h-0 landscape-short:max-h-none">
       <div className="flex items-start justify-between gap-3 border-b border-border/50 px-4 py-4 sm:px-5 landscape-short:px-3 landscape-short:py-2.5">
         <div className="space-y-0.5">
           <div className="flex items-center gap-2">

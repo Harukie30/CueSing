@@ -35,11 +35,11 @@ export function PlayerView() {
   const queueCount = queue.upNext.length + (queue.nowPlaying ? 1 : 0)
 
   return (
-    <div className="relative flex min-h-dvh flex-1 flex-col overflow-hidden landscape-short:min-h-0">
+    <div className="relative flex min-h-dvh flex-1 flex-col overflow-hidden landscape-short:h-dvh landscape-short:min-h-0">
       <LandingBackground />
 
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 sm:px-6 sm:py-8 landscape-short:gap-3 landscape-short:py-3 landscape-short:sm:px-4">
-        <div className="flex items-center justify-between gap-4 landscape-short:gap-2">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 sm:px-6 sm:py-8 landscape-short:h-full landscape-short:max-w-none landscape-short:gap-3 landscape-short:overflow-hidden landscape-short:py-3 landscape-short:sm:px-4">
+        <div className="flex items-center justify-between gap-4 landscape-short:shrink-0 landscape-short:gap-2">
           <Button asChild variant="ghost" size="sm">
             <Link href="/">
               <ArrowLeft data-icon="inline-start" />
@@ -88,15 +88,15 @@ export function PlayerView() {
         <div
           className={cn(
             "grid gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(320px,1fr)] lg:items-start",
-            "landscape-short:grid landscape-short:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.95fr)] landscape-short:items-stretch landscape-short:gap-3"
+            "landscape-short:grid landscape-short:min-h-0 landscape-short:flex-1 landscape-short:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.95fr)] landscape-short:items-stretch landscape-short:gap-3"
           )}
         >
-          <section className="min-h-0 space-y-4 landscape-short:space-y-0">
+          <section className="min-h-0 space-y-4 landscape-short:flex landscape-short:space-y-0">
             {queue.nowPlaying ? (
               <div
                 className={cn(
                   "space-y-4 rounded-2xl border border-border/40 bg-card/55 p-3 backdrop-blur-sm sm:p-4",
-                  "landscape-short:flex landscape-short:min-h-0 landscape-short:gap-3 landscape-short:space-y-0 landscape-short:p-2"
+                  "landscape-short:flex landscape-short:min-h-0 landscape-short:w-full landscape-short:gap-3 landscape-short:overflow-hidden landscape-short:space-y-0 landscape-short:p-2"
                 )}
               >
                 <div
@@ -115,7 +115,7 @@ export function PlayerView() {
                 <div
                   className={cn(
                     "space-y-4 px-1 sm:px-2",
-                    "landscape-short:flex landscape-short:w-52 landscape-short:shrink-0 landscape-short:flex-col landscape-short:justify-between landscape-short:gap-2 landscape-short:overflow-y-auto landscape-short:px-0 landscape-short:sm:px-0"
+                    "landscape-short:flex landscape-short:w-52 landscape-short:shrink-0 landscape-short:flex-col landscape-short:justify-between landscape-short:gap-2 landscape-short:overflow-y-auto landscape-short:px-0 landscape-short:pr-1 landscape-short:sm:px-0 landscape-short:sm:pr-1"
                   )}
                 >
                   <div className="space-y-3 landscape-short:space-y-2">
@@ -159,7 +159,7 @@ export function PlayerView() {
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col items-center gap-5 rounded-2xl bg-card/55 px-6 py-12 text-center backdrop-blur-sm sm:py-16 landscape-short:py-6 landscape-short:sm:py-8">
+              <div className="flex flex-col items-center gap-5 rounded-2xl bg-card/55 px-6 py-12 text-center backdrop-blur-sm sm:py-16 landscape-short:min-h-0 landscape-short:w-full landscape-short:justify-center landscape-short:gap-3 landscape-short:px-4 landscape-short:py-4 landscape-short:sm:py-4">
                 <Image
                   src="/scan.png"
                   alt=""

@@ -42,6 +42,47 @@ type PreviewResponse = {
   rawTitle: string
 }
 
+function CatalogLoadingAnimation() {
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="relative overflow-hidden rounded-2xl bg-card/55 px-4 py-10 text-center backdrop-blur-sm"
+    >
+      <div className="pointer-events-none absolute inset-x-8 top-8 h-24 rounded-full bg-primary/10 blur-3xl" />
+      <div className="relative flex flex-col items-center gap-4">
+        <div className="relative grid size-24 place-items-center">
+          <span className="absolute inset-0 animate-ping rounded-full bg-primary/10" />
+          <span className="absolute inset-3 rounded-full bg-background/70 shadow-sm" />
+          <Image
+            src="/musicc.png"
+            alt=""
+            width={96}
+            height={96}
+            className="relative size-20 object-contain motion-safe:animate-loading-float"
+            priority
+          />
+        </div>
+        <div className="space-y-1">
+          <p className="font-medium">Loading catalog...</p>
+          <p className="text-sm text-muted-foreground">
+            Warming up your karaoke list.
+          </p>
+        </div>
+        <div className="flex items-center gap-1.5" aria-hidden="true">
+          {[0, 1, 2].map((index) => (
+            <span
+              key={index}
+              className="size-2 animate-pulse rounded-full bg-primary/50"
+              style={{ animationDelay: `${index * 160}ms` }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function AdminSongsView() {
   const { logout } = useAdminAuth()
   const [songs, setSongs] = useState<Song[]>([])
@@ -322,11 +363,7 @@ export function AdminSongsView() {
           </div>
 
           {loading ? (
-            <div className="space-y-3">
-              {Array.from({ length: 3 }).map((_, index) => (
-                <div key={index} className="h-20 animate-pulse rounded-2xl bg-card/50" />
-              ))}
-            </div>
+            <CatalogLoadingAnimation />
           ) : songs.length === 0 ? (
             <div className="rounded-2xl bg-card/50 px-4 py-10 text-center">
               <p className="font-medium">No songs yet</p>
